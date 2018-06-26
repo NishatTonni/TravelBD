@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:gravity="center_horizontal"
+android:orientation="vertical"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context=".RegistrationActivity"
+android:background="@drawable/backgroud_gradiant">
+
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Travel Bangladesh"
+    android:gravity="center"
+    android:textSize="40sp"
+    android:textColor="@color/primaryWhite"
+    android:textStyle="bold"
+    android:fontFamily="monospace"
+    />
+
+<LinearLayout
+    android:id="@+id/email_login_form"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:mtf_image="@drawable/ic_baseline_account_circle_24px"
+
+        app:mtf_labelColor="@color/primaryWhite"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_animationDuration="300"
+        android:layout_gravity="center"
+        app:mtf_openKeyboardOnFocus="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:textColor="#333"
+            android:id="@+id/username"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:mtf_image="@drawable/ic_baseline_account_circle_24px"
+
+        app:mtf_labelColor="@color/primaryWhite"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_animationDuration="300"
+        android:layout_gravity="center"
+        app:mtf_openKeyboardOnFocus="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="#333"
+            android:id="@+id/email"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    app:mtf_image="@drawable/ic_baseline_enhanced_encryption_24px"
+    app:mtf_labelColor="@color/primaryWhite"
+    app:mtf_cardCollapsedHeight="4dp"
+    android:layout_gravity="center"
+    app:mtf_animationDuration="300"
+    app:mtf_openKeyboardOnFocus="true"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textColor="#333"
+        android:textSize="15sp" />
+
+</com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:mtf_image="@drawable/ic_baseline_enhanced_encryption_24px"
+        app:mtf_labelColor="@color/primaryWhite"
+        app:mtf_cardCollapsedHeight="4dp"
+        android:layout_gravity="center"
+        app:mtf_animationDuration="300"
+        app:mtf_openKeyboardOnFocus="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordCheck"
+            android:inputType="textPassword"
+            android:hint="Re Enter Password"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <Button
+        android:id="@+id/register_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/action_reg"
+        android:textStyle="bold"
+        android:elevation="10dp"
+        android:background="@drawable/rounded_corners"
+        />
+
+</LinearLayout>
+
+</LinearLayout>
