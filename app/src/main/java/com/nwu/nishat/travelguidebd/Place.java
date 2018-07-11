@@ -1,20 +1,33 @@
 package com.nwu.nishat.travelguidebd;
 
+import com.google.firebase.firestore.GeoPoint;
+
 import java.io.Serializable;
 
 public class Place implements Serializable {
     private String name;
     private String image;
     private String description;
+    private GeoPoint location;
+
+    public Place(String name, String image, String description, GeoPoint location) {
+        this.name = name;
+        this.image = image;
+        this.description = description;
+        this.location = location;
+    }
+
+    public GeoPoint getLocation() {
+
+        return location;
+    }
+
+    public void setLocation(GeoPoint location) {
+        this.location = location;
+    }
 
     public Place(){
 
-    }
-
-    public Place(String image, String name, String description) {
-        this.image = image;
-        this.name = name;
-        this.description = description;
     }
 
     public String getDescription() {

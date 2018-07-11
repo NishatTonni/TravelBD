@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.firestore.GeoPoint;
 import com.yayandroid.parallaxrecyclerview.ParallaxViewHolder;
 
 import java.util.List;
@@ -49,6 +50,8 @@ public class PlacesRecyclerAdapter extends RecyclerView.Adapter<PlacesRecyclerAd
         final String image = placeList.get(position).getImage();
         holder.setImage(image);
 
+        final GeoPoint location = placeList.get(position).getLocation();
+
         holder.getBackgroundImage().reuse();
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,9 @@ public class PlacesRecyclerAdapter extends RecyclerView.Adapter<PlacesRecyclerAd
                 intent.putExtra("name", nameData);
                 intent.putExtra("description", des);
                 intent.putExtra("image", image);
+                intent.putExtra("lat", location.getLatitude());
+                intent.putExtra("long", location.getLongitude());
+
                 view.getContext().startActivity(intent);
             }
         });

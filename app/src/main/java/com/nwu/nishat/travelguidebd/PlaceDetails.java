@@ -29,8 +29,6 @@ public class PlaceDetails extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.htab_tabs);
         final ViewPager viewPager = findViewById(R.id.htab_viewpager);
 
-        setupViewPager(viewPager);
-
         ImageView placeImageView = findViewById(R.id.htab_header);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -64,6 +62,8 @@ public class PlaceDetails extends AppCompatActivity {
         Glide.with(this)
                 .load(placeImageURL)
                 .into(placeImageView);
+
+        setupViewPager(viewPager);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -76,9 +76,13 @@ public class PlaceDetails extends AppCompatActivity {
 
         detailsFragment.setArguments(bd);
 
-        adapter.addFrag(detailsFragment, "Description");
-        adapter.addFrag(new DetailsFragment(
-                ContextCompat.getColor(this, R.color.colorPrimary)), "Amber");
+        adapter.addFrag(detailsFragment, "App");
+
+        RouteFragment routeFragment = new RouteFragment();
+
+        routeFragment.setArguments(bd);
+        adapter.addFrag( routeFragment, "OnMap");
+
         adapter.addFrag(new DetailsFragment(
                 ContextCompat.getColor(this, R.color.cardview_shadow_end_color)), "Purple");
         viewPager.setAdapter(adapter);
