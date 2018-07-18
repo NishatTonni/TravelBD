@@ -73,18 +73,20 @@ public class PlaceDetails extends AppCompatActivity {
 
         DetailsFragment detailsFragment = new DetailsFragment(
                 ContextCompat.getColor(this, R.color.cardview_light_background));
-
         detailsFragment.setArguments(bd);
+        adapter.addFrag(detailsFragment, "About");
 
-        adapter.addFrag(detailsFragment, "App");
+        MapsFragment mapsFragment = new MapsFragment();
+        mapsFragment.setArguments(bd);
+        adapter.addFrag(mapsFragment, "Map");
 
         RouteFragment routeFragment = new RouteFragment();
-
         routeFragment.setArguments(bd);
-        adapter.addFrag( routeFragment, "OnMap");
+        adapter.addFrag( routeFragment, "Route");
 
-        adapter.addFrag(new DetailsFragment(
-                ContextCompat.getColor(this, R.color.cardview_shadow_end_color)), "Purple");
+
+
+
         viewPager.setAdapter(adapter);
     }
 
