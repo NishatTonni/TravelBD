@@ -1,12 +1,15 @@
 package com.nwu.nishat.travelguidebd;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 
@@ -27,6 +30,21 @@ public class PlaceDetails extends AppCompatActivity {
         bd = intent.getExtras();
 
         TabLayout tabLayout = findViewById(R.id.htab_tabs);
+
+        tabLayout.addTab(tabLayout.newTab().setText("About"));
+        tabLayout.addTab(tabLayout.newTab().setText("Map"));
+        tabLayout.addTab(tabLayout.newTab().setText("Route"));
+
+        View root = tabLayout.getChildAt(0);
+        if (root instanceof LinearLayout) {
+            ((LinearLayout) root).setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setColor(getResources().getColor(R.color.cardview_light_background));
+            drawable.setSize(2, 1);
+            ((LinearLayout) root).setDividerPadding(10);
+            ((LinearLayout) root).setDividerDrawable(drawable);
+        }
+
         final ViewPager viewPager = findViewById(R.id.htab_viewpager);
 
         ImageView placeImageView = findViewById(R.id.htab_header);

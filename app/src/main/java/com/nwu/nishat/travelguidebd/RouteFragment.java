@@ -106,8 +106,8 @@ public class RouteFragment extends Fragment implements OnMapReadyCallback, Direc
         Snackbar.make( getView(), "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
         if (direction.isOK()) {
             Route route = direction.getRouteList().get(0);
-            mMap.addMarker(new MarkerOptions().position(origin));
-            mMap.addMarker(new MarkerOptions().position(destination));
+            mMap.addMarker(new MarkerOptions().position(origin).title("You"));
+            mMap.addMarker(new MarkerOptions().position(destination).title(placeName));
 
             ArrayList<LatLng> directionPositionList = route.getLegList().get(0).getDirectionPoint();
             mMap.addPolyline(DirectionConverter.createPolyline(getContext(), directionPositionList, 5, Color.RED));
